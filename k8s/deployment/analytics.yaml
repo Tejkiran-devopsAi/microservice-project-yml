@@ -13,6 +13,7 @@ spec:
       labels:
         app: analytics-service
     spec:
+      serviceAccountName: microservices-sa
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: topology.kubernetes.io/zone

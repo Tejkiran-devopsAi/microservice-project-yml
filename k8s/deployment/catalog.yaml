@@ -13,6 +13,7 @@ spec:
       labels:
         app: catalog-service
     spec:
+      serviceAccountName: microservices-sa
 
       topologySpreadConstraints:
         - maxSkew: 1
