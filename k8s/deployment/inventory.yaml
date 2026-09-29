@@ -13,7 +13,6 @@ spec:
       labels:
         app: inventory-service
     spec:
-      serviceAccountName: microservices-sa
 
       topologySpreadConstraints:
         - maxSkew: 1

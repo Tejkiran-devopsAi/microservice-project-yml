@@ -13,7 +13,6 @@ spec:
       labels:
         app: notification-service
     spec:
-      serviceAccountName: microservices-sa
 
       topologySpreadConstraints:
         - maxSkew: 1

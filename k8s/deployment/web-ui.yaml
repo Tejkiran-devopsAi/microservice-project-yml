@@ -13,7 +13,7 @@ spec:
       labels:
         app: web-ui
     spec:
-      serviceAccountName: microservices-sa
+
 
       topologySpreadConstraints:
         - maxSkew: 1
