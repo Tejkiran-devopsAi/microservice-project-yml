@@ -13,7 +13,7 @@ spec:
       labels:
         app: payments-service
     spec:
-      serviceAccountName: microservices-sa
+      serviceAccountName: microservices
 
       topologySpreadConstraints:
         - maxSkew: 1
