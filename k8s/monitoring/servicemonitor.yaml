@@ -1,0 +1,26 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: microservices
+  namespace: microservices
+  labels:
+    release: kube-prometheus-stack
+spec:
+  namespaceSelector:
+    matchNames:
+      - microservices
+
+  selector:
+    matchExpressions:
+      - key: app
+        operator: Exists
+
+  endpoints:
+   ports:
+    - name: http
+      port: 8081
+      targetPort: 8081
+
+    - name: metrics
+      port: 9090
+      targetPort: 9090

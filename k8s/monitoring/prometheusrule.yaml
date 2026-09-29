@@ -1,0 +1,44 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: microservices-alerts
+  namespace: microservices
+  labels:
+    release: kube-prometheus-stack
+spec:
+  groups:
+    - name: microservices.rules
+      rules:
+
+        - alert: MicroservicePodDown
+          expr: |
+            kube_deployment_status_replicas_available{
+              namespace="microservices"
+            }
+            <
+            kube_deployment_spec_replicas{
+              namespace="microservices"
+            }
+          for: 5m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Microservice replicas unavailable"
+            description: "One or more microservice deployments have unavailable replicas."
+
+        - alert: MicroserviceHighCPU
+          expr: |
+            sum by (namespace, pod) (
+              rate(container_cpu_usage_seconds_total{
+                namespace="microservices",
+                container!="",
+                image!=""
+              }[5m])
+            )
+            > 0.8
+          for: 5m
+          labels:
+            severity: warning
+          annotations:
+            summary: "High CPU usage"
+            description: "A microservice pod has high CPU usage."

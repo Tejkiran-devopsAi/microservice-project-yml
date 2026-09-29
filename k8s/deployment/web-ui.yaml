@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-ui
+  namespace: microservices
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web-ui
+  template:
+    metadata:
+      labels:
+        app: web-ui
+    spec:
+      serviceAccountName: microservices-sa
+
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: topology.kubernetes.io/zone
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: web-ui
+
+      containers:
+        - name: web-ui
+          image: 979700391724.dkr.ecr.us-east-1.amazonaws.com/microse-service-project:web-ui-image
+          imagePullPolicy: Always
+
+          ports:
+            - containerPort: 5173
+
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+          startupProbe:
+            tcpSocket:
+              port: 5173
+            failureThreshold: 30
+            periodSeconds: 10
+
+          readinessProbe:
+            tcpSocket:
+              port: 5173
+            initialDelaySeconds: 10
+            periodSeconds: 10
+
+          livenessProbe:
+            tcpSocket:
+              port: 5173
+            initialDelaySeconds: 30
+            periodSeconds: 20
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-ui
+  namespace: microservices
+spec:
+  type: ClusterIP
+  selector:
+    app: web-ui
+  ports:
+    - name: http
+      port: 5173
+      targetPort: 5173
