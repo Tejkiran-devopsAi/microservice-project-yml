@@ -25,7 +25,7 @@ spec:
 
       containers:
         - name: payments-service
-          image: 979700391724.dkr.ecr.us-east-1.amazonaws.com/microse-service-project:payment-service-613f189
+          image: 979700391724.dkr.ecr.us-east-1.amazonaws.com/microse-service-project:payment-service-03a4a23
           imagePullPolicy: Always
 
           ports:
