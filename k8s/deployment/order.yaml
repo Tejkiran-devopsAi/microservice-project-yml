@@ -25,7 +25,7 @@ spec:
 
       containers:
         - name: order-service
-          image: 979700391724.dkr.ecr.us-east-1.amazonaws.com/microse-service-project:order-service-13fd56c
+          image: 979700391724.dkr.ecr.us-east-1.amazonaws.com/microse-service-project:order-service-adb594b
           imagePullPolicy: Always
 
           ports:
