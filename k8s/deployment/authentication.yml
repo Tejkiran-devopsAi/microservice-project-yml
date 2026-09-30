@@ -25,7 +25,7 @@ spec:
 
       containers:
         - name: auth-service
-          image: 979700391724.dkr.ecr.us-east-1.amazonaws.com/microse-service-project:auth-service-adb594b
+          image: 979700391724.dkr.ecr.us-east-1.amazonaws.com/microse-service-project:auth-service-3e37439
           imagePullPolicy: Always
 
           ports:
