@@ -21,4 +21,4 @@ spec:
               service:
                 name: web-ui
                 port:
-                  number: 5173
+                  number: 80
