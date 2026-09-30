@@ -4,15 +4,19 @@ metadata:
   name: microservices-config
   namespace: microservices
 data:
-  DB_HOST: "my-rds.cy76a8owu7p0.us-east-1.rds.amazonaws.com"
+  ENVIRONMENT: production
+
+  DB_HOST: my-rds.cy76a8owu7p0.us-east-1.rds.amazonaws.com
   DB_PORT: "5432"
 
-  AUTH_SERVICE_URL: "http://auth-service:8081"
-  CATALOG_SERVICE_URL: "http://catalog-service:8082"
-  INVENTORY_SERVICE_URL: "http://inventory-service:8083"
-  ORDER_SERVICE_URL: "http://order-service:8084"
-  PAYMENT_SERVICE_URL: "http://payment-service:8085"
-  NOTIFICATION_SERVICE_URL: "http://notification-service:8086"
-  ANALYTICS_SERVICE_URL: "http://analytics-service:8087"
-
-  ENVIRONMENT: "production"
+  AUTH_SERVICE_URL: http://auth-service:8081
+  CATALOG_SERVICE_URL: http://catalog-service:8082
+  INVENTORY_SERVICE_URL: http://inventory-service:8083
+  ORDER_SERVICE_URL: http://order-service:8084
+  PAYMENT_SERVICE_URL: http://payment-service:8085
+  NOTIFICATION_SERVICE_URL: http://notification-service:8086
+  ANALYTICS_SERVICE_URL: http://analytics-service:8087
+  CATALOG_URL: http://catalog-service:8082
+  INVENTORY_URL: http://inventory-service:8083
+  NOTIFICATION_URL: http://notification-service:8086
+  ORDER_URL: http://order-service:8084
