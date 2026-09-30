@@ -73,5 +73,5 @@ spec:
   selector:
     app: payments-service
   ports:
-    - port: 8084
-      targetPort: 8084
+    - port: 8085
+      targetPort: 8085
