@@ -25,7 +25,7 @@ spec:
 
       containers:
         - name: web-ui
-          image: 979700391724.dkr.ecr.us-east-1.amazonaws.com/microse-service-project:web-ui-image-7ec0bfd
+          image: 979700391724.dkr.ecr.us-east-1.amazonaws.com/microse-service-project:web-ui-image-d9900a4
           imagePullPolicy: Always
 
           ports:

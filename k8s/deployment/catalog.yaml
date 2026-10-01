@@ -25,7 +25,7 @@ spec:
 
       containers:
         - name: catalog-service
-          image: 979700391724.dkr.ecr.us-east-1.amazonaws.com/microse-service-project:catalog-service-7ec0bfd
+          image: 979700391724.dkr.ecr.us-east-1.amazonaws.com/microse-service-project:catalog-service-d9900a4
           imagePullPolicy: Always
 
           ports:
