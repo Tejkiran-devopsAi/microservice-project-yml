@@ -25,7 +25,7 @@ spec:
 
       containers:
         - name: notification-service
-          image: 979700391724.dkr.ecr.us-east-1.amazonaws.com/microse-service-project:notification-service-99f8dab
+          image: 979700391724.dkr.ecr.us-east-1.amazonaws.com/microse-service-project:notification-service-1828a15
           imagePullPolicy: Always
 
           ports:
