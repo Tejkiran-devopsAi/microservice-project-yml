@@ -24,7 +24,7 @@ spec:
 
       containers:
         - name: analytics-service
-          image: 979700391724.dkr.ecr.us-east-1.amazonaws.com/microse-service-project:analytics-service-1828a15
+          image: 979700391724.dkr.ecr.us-east-1.amazonaws.com/microse-service-project:analytics-service-a810cee
           imagePullPolicy: Always
 
           ports:
